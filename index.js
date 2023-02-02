@@ -1,21 +1,11 @@
-// for generateHTML.js
-htmlContent += `
-      <div class="employee">
-        <h2>${employee.name}</h2>
-        <p>ID: ${employee.id}</p>
-        <p>Email: ${employee.email}</p>
-        <p>Office#: ${employee.office}</p>
-      </div>
-    `;
-    
+//Vars
+const inquirer = require("inquirer");
+const fs = require("fs");
+const { questions } = require("./src/commandQ");
 
-let html = `
-    <html>
-      <head>
-        <title>Team</title>
-      </head>
-      <body>
-        ${htmlContent}
-      </body>
-    </html>
-  `;
+// todo: Ecercise OOP: creating class and extending class.
+  // Exercise test: test class and pass all.
+  // Exercise Inquirer library: prompt user from command line.
+  // Using user inputs and instantiate instances from different classes.
+  // Using generated objects to pass value to a new HTML
+  // Created a new HTML index file using all the input data
