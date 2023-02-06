@@ -50,11 +50,13 @@ function menu(){
       choices: ["Add an engineer", "Add an intern", "Finish Building Team"]
     }
   ]).then(function(answers){
-    switch (answers.choices) {
+    console.log(answers)
+    switch (answers.choice) {
       case "Add an engineer":
         createEngineer();
+      break;
       case "Add an intern":
-        createIntern();
+      createIntern();
       break;
       default: 
       createTeam();
@@ -66,7 +68,7 @@ function menu(){
 
 function createEngineer(){
   inquirer.prompt([
-    {
+  {
    name: "name",
    message:"Enter Engineer Name",
    type: "input",
