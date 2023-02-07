@@ -1,5 +1,5 @@
-function generateHTML {
- let html = ` 
+function generateHTML(manager, engineer, intern) {
+  let html = ` 
  <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,22 +14,61 @@ function generateHTML {
     <title>Teams</title>
 </head>
 <body>
-  <main>
-    <div class="row justify-content-center">
-      <div class="card" style="width: 18rem;">
-        <p class="card-name">${Employee.name}</p>
-          <p class="card-title">${Employee.getRole()}</p>
-          <div class="card-body-center">
-          <div class="card-items">
-            
-          </div>
+  <main>`;
+  let bottom = `
+  </main>
+  </body>
+  </html>`;
+
+
+  let middle;
+  for (const x of manager) {
+    let block = `
+  <div class="row justify-content-center">
+    <div class="card" style="width: 18rem;">
+      <p class="card-name">${x.getName()}</p>
+        <p class="card-title">${x.getOffice()}</p>
+        <div class="card-body-center">
+        <div class="card-items">
+          
         </div>
       </div>
     </div>
-    </main>
-</body>
-</html>`
-};
+  </div >`;
+    middle = middle + block;
+  }
 
-for (const employee of employeeInfo) {
-    html += 
+  for (const x of engineer) {
+    let block = `
+  <div class="row justify-content-center">
+    <div class="card" style="width: 18rem;">
+      <p class="card-name">${x.getName()}</p>
+        <p class="card-title">${x.getGithub()}</p>
+        <div class="card-body-center">
+        <div class="card-items">
+          
+        </div>
+      </div>
+    </div>
+  </div >`;
+    middle = middle + block;
+  }
+  for (const x of intern) {
+    let block = `
+  <div class="row justify-content-center">
+    <div class="card" style="width: 18rem;">
+      <p class="card-name">${x.getName()}</p>
+        <p class="card-title">${x.getSchool()}</p>
+        <div class="card-body-center">
+        <div class="card-items">
+          
+        </div>
+      </div>
+    </div>
+  </div >`;
+    middle = middle + block;
+  }
+
+
+  return html+middle+bottom;
+}

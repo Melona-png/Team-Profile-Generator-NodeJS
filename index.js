@@ -7,9 +7,14 @@ const Intern =require("./lib/Intern")
 const Engineer =require("./lib/Engineer")
 const Employee =require("./lib/Employee")
 
+//storing user input
 const team = [];
+const manager = [];
+const engineer = [];
+const intern = [];
 
 
+//prompt function
 function start () {
   inquirer.prompt([
      {
