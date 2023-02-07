@@ -72,3 +72,4 @@ function generateHTML(manager, engineer, intern) {
 
   return html+middle+bottom;
 }
+module.exports = {generateHTML};

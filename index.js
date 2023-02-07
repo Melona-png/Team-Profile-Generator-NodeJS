@@ -1,6 +1,8 @@
 //Vars
 const inquirer = require("inquirer");
 const fs = require("fs");
+const {generateHTML} = require("./src/generateHtml");
+
 
 const Manager = require("./lib/Manager")
 const Intern =require("./lib/Intern")
@@ -8,10 +10,9 @@ const Engineer =require("./lib/Engineer")
 const Employee =require("./lib/Employee")
 
 //storing user input
-const team = [];
-const manager = [];
-const engineer = [];
-const intern = [];
+const managers = [];
+const engineers = [];
+const interns = [];
 
 
 //prompt function
@@ -40,7 +41,7 @@ function start () {
   },
   ]).then(function(answers){
     const manager = new Manager(answers.name,answers.id,answers.email,answers.office)
-    team.push(manager);
+    managers.push(manager);
     menu();
   })
 }
@@ -97,7 +98,7 @@ function createEngineer(){
  },
  ]).then(function(answers){
    const engineer = new Engineer(answers.name,answers.id,answers.email,answers.github)
-   team.push(engineer);
+   engineers.push(engineer);
    menu();
  })
 }
@@ -127,11 +128,17 @@ function createIntern(){
  },
  ]).then(function(answers){
    const intern = new Intern(answers.name,answers.id,answers.email,answers.school)
-   team.push(intern);
+   interns.push(intern);
    menu();
  })
 }
 
-function createTeam(){
-  console.log(team)
-}
+function createTeam() {
+  const html = generateHTML(managers, engineers, interns);
+  fs.writeFile("team.html", html, (err) => {
+    if (err) {
+      return console.log(err);
+    }
+    console.log("The file was saved!");
+  });
+};
