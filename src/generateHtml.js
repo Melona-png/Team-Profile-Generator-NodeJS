@@ -14,6 +14,7 @@ function generateHTML(manager, engineer, intern) {
     <title>Teams</title>
 </head>
 <body>
+<h4>My Team</h4>
   <main>`;
   let bottom = `
   </main>
@@ -21,13 +22,15 @@ function generateHTML(manager, engineer, intern) {
   </html>`;
 
 
-  let middle;
+  let middle = ``
   for (const x of manager) {
     let block = `
-  <div class="row justify-content-center">
+  <div class ="row justify-content-center">
     <div class="card" style="width: 18rem;">
-      <p class="card-name">${x.getName()}</p>
-        <p class="card-title">${x.getOffice()}</p>
+      <p class="card">${x.getName()}</p>
+        <p class="card">${x.getOffice()}</p>
+        <p class="card">${x.getEmail()}</p>
+        <p class="card">${x.getId()}</p>
         <div class="card-body-center">
         <div class="card-items">
           
@@ -42,8 +45,10 @@ function generateHTML(manager, engineer, intern) {
     let block = `
   <div class="row justify-content-center">
     <div class="card" style="width: 18rem;">
-      <p class="card-name">${x.getName()}</p>
-        <p class="card-title">${x.getGithub()}</p>
+      <p class="carde">${x.getName()}</p>
+        <p class="card">${x.getGithub()}</p>
+        <p class="card">${x.getEmail()}</p>
+        <p class="card">${x.getId()}</p>
         <div class="card-body-center">
         <div class="card-items">
           
@@ -57,8 +62,10 @@ function generateHTML(manager, engineer, intern) {
     let block = `
   <div class="row justify-content-center">
     <div class="card" style="width: 18rem;">
-      <p class="card-name">${x.getName()}</p>
-        <p class="card-title">${x.getSchool()}</p>
+      <p class="card">${x.getName()}</p>
+        <p class="card">${x.getSchool()}</p>
+        <p class="card">${x.getEmail()}</p>
+        <p class="card">${x.getId()}</p>
         <div class="card-body-center">
         <div class="card-items">
           

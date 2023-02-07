@@ -10,6 +10,7 @@ const Engineer =require("./lib/Engineer")
 const Employee =require("./lib/Employee")
 
 //storing user input
+const employees = [];
 const managers = [];
 const engineers = [];
 const interns = [];
@@ -134,7 +135,7 @@ function createIntern(){
 }
 
 function createTeam() {
-  const html = generateHTML(managers, engineers, interns);
+  const html = generateHTML(managers, engineers, interns, employees);
   fs.writeFile("team.html", html, (err) => {
     if (err) {
       return console.log(err);
