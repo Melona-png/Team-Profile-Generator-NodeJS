@@ -1,5 +1,39 @@
+.container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+.cardRow{
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100vw;
+}
+
 .card {
     margin: 20px;
     padding: 20px;
+    display: block;
+    justify-content: center;
+}
 
+h4 {
+    text-align: center;
+    background-color: rgb(154, 154, 244);
+}
+
+.major {
+    display: block;
+    font-size: large;
+    text-align: center;
+    background-color: rgb(154, 154, 244);
+}
+
+.minor {
+    display: block;
+    font-size: medium;
+    text-align: center;
+    background-color: rgb(154, 154, 244);
 }
